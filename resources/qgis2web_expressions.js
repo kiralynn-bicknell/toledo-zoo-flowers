@@ -766,7 +766,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_ToledoZooFlowerAnnex_1rule0_eval_expression(context) {
+function exp_ToledoZooFlowerSurvey_1rule0_eval_expression(context) {
     // "Native to Ohio" = 1
 
     var feature = context.feature;
@@ -779,7 +779,7 @@ function exp_ToledoZooFlowerAnnex_1rule0_eval_expression(context) {
 }
 
 
-function exp_ToledoZooFlowerAnnex_1rule1_eval_expression(context) {
+function exp_ToledoZooFlowerSurvey_1rule1_eval_expression(context) {
     // "Native to Ohio" = 2
 
     var feature = context.feature;
