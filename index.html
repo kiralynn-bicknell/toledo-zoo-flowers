@@ -66,27 +66,44 @@
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>   
 
+<div id="map-sidebar" style="
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    max-width: 280px;
+">
+    <img src="images/sidebar_metrics.png" alt="Zoo Survey Metrics" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+</div>     
+
 <style>
-    /* Absolute override for cluster pop-up header clutter */
-    .leaflet-popup-content-wrapper tr th {
-        font-weight: bold;
-        color: #555;
-        padding-right: 10px;
-    }
-    
-    /* If multiple tables stack up inside a single pop-up window, 
-       hide the headers on every table after the first one */
-    .leaflet-popup-content .popup-table ~ .popup-table tr th,
-    .leaflet-popup-content table ~ table tr th {
+    /* 1. Target the absolute top title block/layer name and wipe it out */
+    .leaflet-popup-content > th, 
+    .leaflet-popup-content tr:first-child th[colspan="2"] {
         display: none !important;
     }
     
-    /* Add a clean separating line between the stacked flower entries */
-    .leaflet-popup-content table ~ table {
-        border-top: 1px solid #ddd;
-        margin-top: 8px;
-        padding-top: 8px;
+    /* 2. In case it generated it as a bold title block inside your specific setup, 
+       this catches any text that exactly matches your layer title and hides it */
+    .leaflet-popup-content th:contains("Toledo Zoo Flower Survey") {
+        display: none !important;
     }
-</style>     
+
+    /* 3. Clean up the extra horizontal line rules left behind by the hidden titles */
+    .leaflet-popup-content hr {
+        display: none !important;
+    }
+
+    /* 4. Add a clean, crisp divider line between the clustered flower entries instead */
+    .leaflet-popup-content table ~ table {
+        border-top: 2px dashed #ddd !important;
+        margin-top: 12px !important;
+        padding-top: 12px !important;
+    }
+</style>
     </body>
 </html>
