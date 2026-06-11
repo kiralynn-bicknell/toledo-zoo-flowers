@@ -70,17 +70,63 @@
 
 <div id="map-sidebar" style="
     position: absolute;
-    top: 400px;
-    right: 20px;
+    top: 20px;
+    left: 20px;
     z-index: 1000;
     background: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     max-width: 280px;
+    transition: all 0.3s ease;
 ">
-    <img src="images/sidebar_metrics.png" alt="Zoo Survey Metrics" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-</div>     
+    <button id="sidebar-toggle" onclick="toggleSidebar()" style="
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+    ">—</button>
+
+    <div id="sidebar-content">
+        <img src="images/sidebar_metrics.png" alt="Zoo Survey Metrics" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+    </div>
+</div>
+
+<script>
+function toggleSidebar() {
+    var sidebar = document.getElementById('map-sidebar');
+    var content = document.getElementById('sidebar-content');
+    var button = document.getElementById('sidebar-toggle');
+    
+    if (content.style.display === 'none') {
+        // Maximize/Show
+        content.style.display = 'block';
+        sidebar.style.padding = '10px';
+        sidebar.style.background = 'white';
+        sidebar.style.boxShadow = '0 4px 6px rgba(0,0,0,0.3)';
+        button.innerHTML = '—';
+    } else {
+        // Minimize/Hide
+        content.style.display = 'none';
+        sidebar.style.padding = '0';
+        sidebar.style.background = 'transparent';
+        sidebar.style.boxShadow = 'none';
+        button.innerHTML = '📊'; // Turns the button into a metric icon when hidden
+    }
+}
+</script>   
 
     </body>
 </html>
