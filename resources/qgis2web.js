@@ -246,7 +246,6 @@ function onPointerMove(evt) {
                     currentFeature = clusteredFeatures[n];
                     currentFeatureKeys = currentFeature.getKeys();
                     popupText += '<li><table>'
-                    popupText += '<a>' + '<b>' + layer.get('popuplayertitle') + '</b>' + '</a>';
                     popupText += createPopupField(currentFeature, currentFeatureKeys, layer);
                     popupText += '</table></li>';    
                 }
