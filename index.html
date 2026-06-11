@@ -43,7 +43,7 @@
             margin: 0;
         }
         </style>
-        <title></title>
+        <title>Toledo Zoo Flower Survey</title>
     </head>
     <body>
         <div id="map">
@@ -64,6 +64,29 @@
         <script src="styles/ToledoZooFlowerSurvey_1_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
-        <script src="./resources/qgis2web.js"></script>        
+        <script src="./resources/qgis2web.js"></script>   
+
+<style>
+    /* Absolute override for cluster pop-up header clutter */
+    .leaflet-popup-content-wrapper tr th {
+        font-weight: bold;
+        color: #555;
+        padding-right: 10px;
+    }
+    
+    /* If multiple tables stack up inside a single pop-up window, 
+       hide the headers on every table after the first one */
+    .leaflet-popup-content .popup-table ~ .popup-table tr th,
+    .leaflet-popup-content table ~ table tr th {
+        display: none !important;
+    }
+    
+    /* Add a clean separating line between the stacked flower entries */
+    .leaflet-popup-content table ~ table {
+        border-top: 1px solid #ddd;
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+</style>     
     </body>
 </html>
