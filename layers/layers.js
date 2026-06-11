@@ -29,9 +29,9 @@ var lyr_ToledoZooFlowerSurvey_1 = new ol.layer.Vector({
                 declutter: false,
                 source:cluster_ToledoZooFlowerSurvey_1, 
                 style: style_ToledoZooFlowerSurvey_1,
-                popuplayertitle: 'Toledo Zoo Flower Survey',
+                popuplayertitle: 'Toledo Zoo Flower Survey 2026',
                 interactive: true,
-    title: 'Toledo Zoo Flower Survey<br />\
+    title: 'Toledo Zoo Flower Survey 2026<br />\
     <img src="styles/legend/ToledoZooFlowerSurvey_1_0.png" /> Native to Ohio<br />\
     <img src="styles/legend/ToledoZooFlowerSurvey_1_1.png" /> Exotic/Non-Native<br />' });
 
