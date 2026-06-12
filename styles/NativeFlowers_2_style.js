@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_ToledoZooFlowerSurvey_1 = function(feature, resolution){
+var style_NativeFlowers_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,7 +21,7 @@ var style_ToledoZooFlowerSurvey_1 = function(feature, resolution){
     size = clusteredFeatures.length;
     if (size == 1) { // If cluster has one feature
         var feature = clusteredFeatures[0];
-        value = clusteredFeatures[0].get("var value = '';");
+        value = clusteredFeatures[0].get("");
         if ("" !== null) {
             labelText = String("");
         }
@@ -66,37 +66,13 @@ var style_ToledoZooFlowerSurvey_1 = function(feature, resolution){
 			})
 		];
 	}
-    
-        function rules_ToledoZooFlowerSurvey_1(feature, value) {
-            var context = {
-                feature: feature,
-                variables: {}
-            };
-            // Start of if blocks and style check logic
-            if (exp_ToledoZooFlowerSurvey_1rule0_eval_expression(context)) {
-                      return [ new ol.style.Style({
+    var style = [ new ol.style.Style({
         image: new ol.style.Circle({radius: 6.8 + size,
             displacement: [0, 0], stroke: new ol.style.Stroke({color: 'rgba(6,35,9,0.5058823529411764)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(255,0,193,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
-                    }
-                    else if (exp_ToledoZooFlowerSurvey_1rule1_eval_expression(context)) {
-                      return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.8 + size,
-            displacement: [0, 0], stroke: new ol.style.Stroke({color: 'rgba(6,35,9,0.5058823529411764)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(212,212,2,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    }
-            else {
-                return [];
-            }
-        }
-        var style = rules_ToledoZooFlowerSurvey_1(feature, value);
-        ;
 
     return style;
 };
