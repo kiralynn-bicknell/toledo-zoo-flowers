@@ -614,15 +614,14 @@ map.once('rendercomplete', function() {
   if (bottomAttributionUl) {
     var layerAttrs = Array.from(bottomAttributionUl.querySelectorAll('li'))
       .map(function(li) { return li.innerHTML.trim(); }).filter(Boolean);
-    var attribHtml = `
-    <a href="https://github.com/qgis2web/qgis2web">qgis2web</a> &middot;
-    <a href="https://openlayers.org/">OpenLayers</a> &middot;
-    <a href="https://qgis.org/">QGIS</a>`;
+    
+    // Completely customized clean line highlighting your data ownership
+    var attribHtml = `Data &copy; 2026 Kira Bicknell &middot; <a href="https://openlayers.org/">OpenLayers</a> &middot; QGIS`;
+    
     if (layerAttrs.length > 0) { attribHtml += ' &nbsp;|&nbsp; ' + layerAttrs.join(', '); }
     bottomAttributionUl.innerHTML = '<li>' + attribHtml + '</li>';
   }
 });
-
 
 // Disable "popup on hover" or "highlight on hover" if ol-control mouseover
 var preDoHover = doHover;
