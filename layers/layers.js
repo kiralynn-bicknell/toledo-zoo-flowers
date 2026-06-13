@@ -48,7 +48,7 @@ var lyr_NativeFlowers_2 = new ol.layer.Vector({
                 declutter: false,
                 source:cluster_NativeFlowers_2, 
                 style: style_NativeFlowers_2,
-                popuplayertitle: 'Native Flowers',
+                popuplayertitle: ' ',
                 interactive: true,
                 title: '<img src="styles/legend/NativeFlowers_2.png" /> Native Flowers'
             });
