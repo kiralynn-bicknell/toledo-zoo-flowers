@@ -29,7 +29,7 @@ var lyr_ExoticNonNativeFlowers_1 = new ol.layer.Vector({
                 declutter: false,
                 source:cluster_ExoticNonNativeFlowers_1, 
                 style: style_ExoticNonNativeFlowers_1,
-                popuplayertitle: 'Exotic/Non-Native Flowers',
+                popuplayertitle: ' ',
                 interactive: true,
                 title: '<img src="styles/legend/ExoticNonNativeFlowers_1.png" /> Exotic/Non-Native Flowers'
             });
