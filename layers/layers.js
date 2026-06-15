@@ -10,7 +10,7 @@ var wms_layers = [];
             
             
             source: new ol.source.XYZ({
-            attributions: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Base Map ©2015 Google</a>',
+            attributions: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Base Map ©2026 Google</a>',
                 url: 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}'
             })
         });
